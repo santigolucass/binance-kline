@@ -5,6 +5,6 @@ class KlinesController < ApplicationController
   end
 
   def kline_params
-    params.permit(:symbol, :interval, :type)
+    params.permit(:symbol, :interval, :type, :period)
   end
 end
