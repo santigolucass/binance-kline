@@ -65,6 +65,7 @@ GEM
     bootsnap (1.9.3)
       msgpack (~> 1.0)
     builder (3.2.4)
+    chartkick (4.1.3)
     childprocess (4.1.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
@@ -98,7 +99,6 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
     minitest (5.15.0)
-    moving_avg (0.2.2)
     msgpack (1.4.2)
     multi_xml (0.6.0)
     nio4r (2.5.8)
@@ -244,10 +244,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
+  chartkick
   httparty
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  moving_avg
   pg (~> 1.1)
   pry
   puma (~> 5.0)
