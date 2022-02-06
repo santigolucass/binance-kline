@@ -1,50 +1,3 @@
-GIT
-  remote: https://github.com/rspec/rspec-core.git
-  revision: 824156db95590e923aef8949fcb0dc348537157f
-  branch: main
-  specs:
-    rspec-core (3.11.0.pre)
-      rspec-support (= 3.11.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec-expectations.git
-  revision: 4fa4cd9fdf8cf4493840ad8b90d90ce72744f199
-  branch: main
-  specs:
-    rspec-expectations (3.11.0.pre)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (= 3.11.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec-mocks.git
-  revision: 63049683e0ff0d197d06e48f29c618a2b4813b51
-  branch: main
-  specs:
-    rspec-mocks (3.11.0.pre)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (= 3.11.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec-rails.git
-  revision: 58fee017226b4fa1a6820afd6dff495ff1e55e44
-  branch: main
-  specs:
-    rspec-rails (6.0.0.pre)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
-      railties (>= 5.2)
-      rspec-core (= 3.11.0.pre)
-      rspec-expectations (= 3.11.0.pre)
-      rspec-mocks (= 3.11.0.pre)
-      rspec-support (= 3.11.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec-support.git
-  revision: 66000066c6c5359de3a50872f617bd0ddf9b8d2c
-  branch: main
-  specs:
-    rspec-support (3.11.0.pre)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -206,6 +159,23 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.2.0)
     rexml (3.2.5)
+    rspec-core (3.10.2)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-rails (5.1.0)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+    rspec-support (3.10.3)
     rubocop (1.18.3)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
@@ -285,11 +255,7 @@ DEPENDENCIES
   pry
   puma (~> 5.0)
   rails (~> 6.1.4, >= 6.1.4.4)
-  rspec-core!
-  rspec-expectations!
-  rspec-mocks!
-  rspec-rails!
-  rspec-support!
+  rspec-rails
   rubocop
   sass-rails (>= 6)
   selenium-webdriver
