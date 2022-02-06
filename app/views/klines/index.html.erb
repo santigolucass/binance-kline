@@ -5,6 +5,6 @@
   <%= select_tag "symbol", options_for_select([ "ADABNB", "BNBBTC" ], params[:symbol]) %>
   <%= select_tag "interval", options_for_select([ "1h", "2h" ], params[:interval]) %>
   <%= select_tag "type", options_for_select([ "open", "close", "high", "low" ], params[:type]) %>
-  <%= select_tag "period", options_for_select([1,2,3,4,5,6,7,8,9,10], params[:period]) %>
+  <%= select_tag "period", options_for_select(Array(1...500), params[:period]) %>
   <%= submit_tag("Submit") %>
 <% end %>
