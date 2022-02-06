@@ -1,1 +1,10 @@
-<%= @data %>
+<h1>Moving avg = <%= @data[:moving_avg] %></h1>
+<%= area_chart @data[:data] %>
+
+<%= form_tag("/klines_average", :method => "get") do %>
+  <%= select_tag "symbol", options_for_select([ "BNBBTC", "ADABNB" ]) %>
+  <%= select_tag "interval", options_for_select([ "1h", "2h" ]) %>
+  <%= select_tag "type", options_for_select([ "open", "close", "high", "low" ]) %>
+  <%= select_tag "period", options_for_select([1,2,3,4,5,6,7,8,9,10]) %>
+  <%= submit_tag("Submit") %>
+<% end %>
