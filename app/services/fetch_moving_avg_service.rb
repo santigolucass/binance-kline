@@ -12,8 +12,8 @@ class FetchMovingAvgService < ApplicationService
 
   def initialize(kline_params)
     @kline_params = kline_params
-    @type = TYPES[kline_params[:type].to_sym]
-    @period = kline_params[:period].to_i
+    @type = TYPES[kline_params[:type]&.to_sym || :open]
+    @period = kline_params[:period]&.to_i || 12
   end
 
   def call

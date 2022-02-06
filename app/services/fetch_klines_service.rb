@@ -2,7 +2,7 @@ class FetchKlinesService < ApplicationService
   attr_reader :symbol, :interval
 
   def initialize(symbol, interval)
-    @symbol = symbol
+    @symbol = symbol || 'ADABNB'
     @interval = interval || '1h'
   end
 
