@@ -11,12 +11,12 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'httparty'
-gem "chartkick"
+gem 'chartkick'
+gem 'rest-client'
 
 group :development, :test do
   gem 'pry'
-  gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -29,6 +29,9 @@ end
 group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'webmock'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
