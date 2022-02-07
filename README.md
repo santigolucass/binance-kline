@@ -1,6 +1,6 @@
 # Binance Klines
 
-<img src="x`public/home.png" alt="Home">
+![alt text](https://github.com/santigolucass/binance-kline/blob/main/public/home.png?raw=true)
 
 > Demo project to show historic and moving average of Binance Klines
 
