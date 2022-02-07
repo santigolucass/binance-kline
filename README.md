@@ -1,24 +1,41 @@
-# README
+# Binance Klines
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="x`public/home.png" alt="Home">
 
-Things you may want to cover:
+> Demo project to show historic and moving average of Binance Klines
 
-* Ruby version
 
-* System dependencies
+## 💻 Requirements
 
-* Configuration
+You'll need:
+* Docker
+* Docker compose
 
-* Database creation
+## 🚀 Running <Binance Kline>
 
-* Database initialization
+Follow those simple steps:
 
-* How to run the test suite
+First, build the app:
+```
+docker-compose build
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Then start the containers:
+```
+docker-compose up
+```
+  
+And then you can just access [localhost](https://localhost:3000)
 
-* Deployment instructions
+## 📝 Running tests
 
-* ...
+  To run tests inside the container, use the following command:
+```
+docker-compose run -e "RAILS_ENV=test" app rspec
+```
+The above command will run all tests in the project, to run them separately use:
+  ```
+docker-compose run -e "RAILS_ENV=test" app rspec path/to/file.rb
+```
+  
+  
