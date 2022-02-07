@@ -16,7 +16,7 @@ RSpec.describe KlinesController, type: :controller do
     }
   }
 
-  describe "GET #index" do
+  context "GET #index" do
     it "returns a success response", :vcr do
       get :index, params: params
       expect(response).to be_successful
