@@ -13,13 +13,13 @@ services:
       - .:/app
       - gem_cache:/usr/local/bundle/gems
       - node_modules:/app/node_modules
-    env_file: .env
+    env_file: .env.development
     tty: true
     stdin_open: true
 
   database:
     image: postgres:12.1
-    env_file: .env
+    env_file: .env.development
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
