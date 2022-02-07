@@ -18,16 +18,11 @@ RUN gem install bundler
 
 WORKDIR /app
 
-COPY Gemfile Gemfile.lock ./
-
-# RUN bundle config build.nokogiri --use-system-libraries
-
-RUN bundle check || bundle install
-
-COPY package.json yarn.lock ./
-
-RUN yarn install --check-files
-
 COPY . ./
 
-ENTRYPOINT ["./entrypoint.sh"]
+RUN chmod +x /app/entrypoint.sh
+
+RUN bundle check || bundle install
+RUN yarn install --check-files
+
+ENTRYPOINT [ "bundle", "exec" ]
