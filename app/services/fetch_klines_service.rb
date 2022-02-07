@@ -15,19 +15,19 @@ class FetchKlinesService < ApplicationService
   private
 
   def fetch_klines
-    query = {
+    params = {
       'symbol' => symbol,
       'interval' => interval
     }
 
     begin
-      res = HTTParty.get(
+      res = RestClient.get(
         ENV['BINANCE_KLINE_API_URL'],
-        query: query
+        params: params
       )
     rescue StandardError => e
       Rails.logger.error (["#{self.class} - #{e.class}: #{e.message}"] + e.backtrace).join("\n")
-      'Something went wrong'
+      {error: 'Something went wrong'}
     end
   end
 end
