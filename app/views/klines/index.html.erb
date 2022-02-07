@@ -1,6 +1,6 @@
-<%= if @data[:error].present? %>
+<% if @data.try(:error).present? %>
   <h1><%= @data[:error] %></h1>
-<%= else %>
+<% else %>
   <%= form_tag("/klines_average", :method => "get") do %>
     <%= select_tag "symbol", options_for_select([ "ADABNB", "BNBBTC" ], params[:symbol]) %>
     <%= select_tag "interval", options_for_select([ "1h", "2h" ], params[:interval]) %>
@@ -12,4 +12,4 @@
   <h2>Moving avg = <%= @data[:moving_avg] %></h2>
   <%= area_chart @data[:data] %>
 
-<%= end%>
+<% end%>
