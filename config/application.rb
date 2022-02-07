@@ -1,6 +1,9 @@
 require_relative "boot"
 
 require "rails/all"
+require 'dotenv'
+
+File.exist?('.env') ? Dotenv.load('.env') : Dotenv.load(".env.#{Rails.env}")
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
