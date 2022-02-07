@@ -19,17 +19,24 @@ class FetchMovingAvgService < ApplicationService
   def call
     data = fetch_klines
 
-    {
-      data: data,
-      moving_avg: moving_average(data.map{ |e| e[1] }, period)
-    }
+    if data.try(:error).present?
+      data
+    else
+      {
+        data: data,
+        moving_avg: moving_average(data.map { |e| e[1] }, period)
+      }
+    end
   end
 
   private
 
   def fetch_klines
-    klines = FetchKlinesService.call(kline_params[:symbol], kline_params[:interval])
-    add_formatted_date(klines)
+    response = JSON.parse(FetchKlinesService.call(kline_params[:symbol], kline_params[:interval]))
+
+    return response if response.try(:error).present?
+
+    add_formatted_date(response)
   end
 
   def add_formatted_date(klines)
@@ -38,3 +45,4 @@ class FetchMovingAvgService < ApplicationService
     end
   end
 end
+
