@@ -2,9 +2,13 @@
   <h1><%= @data[:error] %></h1>
 <% else %>
   <%= form_tag("/klines_average", :method => "get") do %>
+    <%= label_tag("Symbol:") %>
     <%= select_tag "symbol", options_for_select([ "ADABNB", "BNBBTC" ], params[:symbol]), onchange: "this.form.submit();"%>
+    <%= label_tag("Interval:") %>
     <%= select_tag "interval", options_for_select([ "1h", "2h" ], params[:interval]), onchange: "this.form.submit();" %>
+    <%= label_tag("Type:") %>
     <%= select_tag "type", options_for_select([ "open", "close", "high", "low" ], params[:type]), onchange: "this.form.submit();" %>
+    <%= label_tag("Period (In Hours):") %>
     <%= select_tag "period", options_for_select(Array(1...500), params[:period]), onchange: "this.form.submit();" %>
   <% end %>
 
